@@ -1,3 +1,8 @@
+- name: Install php-redis
+  apt:
+    name: php-redis
+  notify: restart php-fpm
+
 - name: Catch worker output on php-fpm
   lineinfile:
     dest: "{{ php_fpm_pool_conf_path }}"
