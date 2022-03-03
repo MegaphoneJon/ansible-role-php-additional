@@ -15,3 +15,8 @@
     src: files/99-cli.ini
     dest: "/etc/php/{{ php_version }}/cli/conf.d"
     mode: 0644
+
+- name: Ensure we're using the correct CLI version
+  community.general.alternatives:
+    name: php
+    path: "/usr/bin/php{{ php_version }}"
