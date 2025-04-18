@@ -15,6 +15,7 @@
     src: files/99-cli.ini
     dest: "/etc/php/{{ php_version }}/cli/conf.d"
     mode: 0644
+  tags: php-cli
 
 - name: Ensure we're using the correct CLI version
   community.general.alternatives:
